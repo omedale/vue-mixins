@@ -1,7 +1,7 @@
  <template>
       <div class="hello">
 
-        <h2>Inactive Users</h2>
+        <h2>{{ 'inactive users' | localCapitalize}}</h2>
         <ul>
           <li style="display:block;" v-for="user in inactiveUsers">Name: {{user.name}}, Age: {{user.age}}</li>
         </ul>
@@ -31,6 +31,14 @@
             {name: 'sam john', age: 24, status: 0, created_at: '2017-04-01' },
             {name: 'dia dia', age: 27, status: 1, created_at: '2017-05-08' }
           ]
+        }
+      },
+      //  local filters in a component’s options
+      filters: {
+        localCapitalize: function (value) {
+          if (!value) return ''
+          value = value.toString()
+          return value.charAt(0).toUpperCase() + value.slice(1)
         }
       },
       computed: {

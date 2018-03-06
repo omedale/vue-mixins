@@ -1,7 +1,7 @@
     <template>
       <div class="active">
-
-        <h2>Active Users</h2>
+         <span>{{ 351.99 | toUSD }}</span>
+        <h2>{{'active users' | capitalize}}</h2>
         <ul>
           <li style="display:block;" v-for="user in activeUsers">Name: {{user.name}}, Age: {{user.age}}</li>
         </ul>
